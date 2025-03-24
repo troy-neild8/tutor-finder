@@ -54,7 +54,6 @@ export default class UsersController {
       })
     }
   }
-  // TODO(tneild): delete user from the database
   async delete(id: number) {
     return db
       .deleteFrom("person")
