@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "start": "tsc && node ./dist/server.js",
-    "dev": "tsc-watch --onsuccess \"node dist/server.js\"",
+    "dev": "docker compose up -d --wait && tsc-watch --onsuccess \"node dist/server.js\"",
     "codegen": "kysely-codegen --out-file=./src/db/db.d.ts",
     "migrate": "docker compose up -d --wait db && kysely migrate:latest",
     "seed": "docker compose up -d --wait db && kysely seed:run",
