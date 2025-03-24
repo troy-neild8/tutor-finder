@@ -41,7 +41,18 @@ class UsersRoutes {
     this.router.put("/:id", this.controller.update)
 
     // Delete a Users with id
-    this.router.delete("/:id", this.controller.delete)
+    this.router.delete("/:id", (req, res) => {
+      try {
+        this.controller.delete(Number(req.params.id))
+        res.status(204).json({
+          message: "delete OK",
+        })
+      } catch (err) {
+        res.status(500).json({
+          message: "Internal Server Error!",
+        })
+      }
+    })
   }
 }
 

@@ -3,6 +3,7 @@ import { db } from "../database"
 import { sql } from "kysely"
 
 export default class UsersController {
+  // TODO(tneild): use zod to validate the request body, and then insert into the database
   async create(req: Request, res: Response) {
     try {
       res.status(201).json({
@@ -39,6 +40,7 @@ export default class UsersController {
       .executeTakeFirst()
   }
 
+  // TODO(tneild): use zod to validate the request body, and then update the database
   async update(req: Request, res: Response) {
     try {
       res.status(200).json({
@@ -52,17 +54,11 @@ export default class UsersController {
       })
     }
   }
-
-  async delete(req: Request, res: Response) {
-    try {
-      res.status(200).json({
-        message: "delete OK",
-        reqParamId: req.params.id,
-      })
-    } catch (err) {
-      res.status(500).json({
-        message: "Internal Server Error!",
-      })
-    }
+  // TODO(tneild): delete user from the database
+  async delete(id: number) {
+    return db
+      .deleteFrom("person")
+      .where("person.id", "=", id)
+      .executeTakeFirst()
   }
 }
