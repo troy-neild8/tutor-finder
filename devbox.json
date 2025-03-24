@@ -5,7 +5,8 @@
   "shell": {
     "init_hook": [
       "export PATH=./node_modules/.bin:$PATH",
-      "export DATABASE_URL=\"postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}?sslmode=disable\""
+      "export DATABASE_URL=\"postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}?sslmode=disable\"",
+      "yarn install"
     ],
     "scripts": {
       "test": ["echo \"Error: no test specified\" && exit 1"]
