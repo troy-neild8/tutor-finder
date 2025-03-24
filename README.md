@@ -19,7 +19,13 @@ curl -fsSL https://get.jetify.com/devbox | bash
 
 We reccomend installing the devbox VS Code extension. [link](https://marketplace.visualstudio.com/items?itemName=jetpack-io.devbox)
 
-If you have the debox vscode extension, your terminal should be in the dev shell automatically. **Otherwise, run `devbox shell` at the beginning of your development session.**
+If you have the debox vscode extension, your terminal should be in the dev shell automatically. \*\*Otherwise, run
+
+```sh
+devbox shell
+```
+
+at the beginning of your development session.\*\*
 
 ## Setting up the database
 
