@@ -2,9 +2,10 @@
 
 ## Tech stack
 
-Simple CRUD app built with
-[kysely](https://kysely.dev/) for database management. Including migrations, seeding, and type-safe querying
-[express](https://expressjs.com/) for our application server
+CRUD app built with
+
+1. [Kysely](https://kysely.dev/) for database management, including migrations, seeding, and type-safe querying.
+2. [Express](https://expressjs.com/) for our application server.
 
 ## Getting started
 
@@ -23,8 +24,6 @@ If you have the debox vscode extension, your terminal should be in the dev shell
 ```sh
 devbox shell
 ```
-
-## Setting up the database
 
 Run the database migrations
 
