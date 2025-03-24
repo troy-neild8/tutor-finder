@@ -54,6 +54,7 @@ export default class UsersController {
       })
     }
   }
+
   async delete(id: number) {
     return db
       .deleteFrom("person")

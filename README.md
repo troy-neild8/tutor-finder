@@ -9,6 +9,8 @@ CRUD app built with
 
 ## Getting started
 
+### Setting up developer environment
+
 Install devbox
 
 ```sh
@@ -17,21 +19,18 @@ curl -fsSL https://get.jetify.com/devbox | bash
 
 We reccomend installing the devbox VS Code extension. [link](https://marketplace.visualstudio.com/items?itemName=jetpack-io.devbox)
 
-## Enter the devbox shell
+If you have the debox vscode extension, your terminal should be in the dev shell automatically. Otherwise, run `devbox shell` at the beginning of your development session.
 
-If you have the debox vscode extension, your terminal should be in the dev shell automatically. Otherwise, run
+## Setting up the database
 
-```sh
-devbox shell
-```
-
-Run the database migrations
+You may need to do if you pull in new changes, which have updates to the database schema.
+Run the database migrations.
 
 ```sh
 yarn migrate
 ```
 
-Seed the database
+Optionally, seed the database with sample data.
 
 ```sh
 yarn seed
