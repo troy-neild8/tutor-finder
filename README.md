@@ -1,5 +1,11 @@
 # tutor-finder
 
+## Tech stack
+
+Simple CRUD app built with
+[kysely](https://kysely.dev/) for database management. Including migrations, seeding, and type-safe querying
+[express](https://expressjs.com/) for our application server
+
 ## Getting started
 
 Install devbox
