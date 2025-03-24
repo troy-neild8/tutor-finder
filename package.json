@@ -1,0 +1,38 @@
+{
+  "name": "tutor-finder",
+  "version": "1.0.0",
+  "description": "Finds tutors",
+  "main": "index.js",
+  "repository": "git@github.com:troy-neild8/tutor-finder.git",
+  "author": "Troy Neild",
+  "license": "UNLICENSED",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node ./dist/server.js",
+    "dev": "tsc-watch --onsuccess \"node dist/server.js\"",
+    "codegen": "kysely-codegen --out-file=./src/db/db.d.ts",
+    "migrate": "docker compose up -d --wait db && kysely migrate:latest",
+    "seed": "docker compose up -d --wait db && kysely seed:run",
+    "wipe": "docker compose down db && docker volume rm tutor-finder_db"
+  },
+  "dependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "knex": "^3.1.0",
+    "kysely": "^0.27.6",
+    "pg": "^8.14.1",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.11",
+    "@types/pg": "^8.11.11",
+    "kysely-codegen": "^0.18.3",
+    "kysely-ctl": "^0.12.1",
+    "prettier": "^3.5.3",
+    "tsc-watch": "^6.2.1",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

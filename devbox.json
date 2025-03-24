@@ -1,0 +1,14 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jetify-com/devbox/0.13.7/.schema/devbox.schema.json",
+  "packages": ["yarn@1.22.22", "nodejs@23.10.0"],
+  "env_from": ".env",
+  "shell": {
+    "init_hook": [
+      "export PATH=./node_modules/.bin:$PATH",
+      "export DATABASE_URL=\"postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}?sslmode=disable\""
+    ],
+    "scripts": {
+      "test": ["echo \"Error: no test specified\" && exit 1"]
+    }
+  }
+}
