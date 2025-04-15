@@ -3,7 +3,7 @@
  * Please do not edit it manually.
  */
 
-import type { ColumnType } from 'kysely'
+import type { ColumnType } from "kysely"
 
 export type Generated<T> =
   T extends ColumnType<infer S, infer I, infer U>
@@ -12,7 +12,7 @@ export type Generated<T> =
 
 export type Timestamp = ColumnType<Date, Date | string, Date | string>
 
-export interface Person {
+export interface User {
   created_at: Generated<Timestamp>
   email: string
   first_name: string
@@ -21,5 +21,5 @@ export interface Person {
 }
 
 export interface DB {
-  person: Person
+  user: User
 }

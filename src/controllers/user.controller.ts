@@ -7,12 +7,12 @@ import { CreateUser } from "../types/user"
 
 export default class UsersController {
   async create(payload: CreateUser) {
-    await db.insertInto("person").values(payload).executeTakeFirst()
+    await db.insertInto("user").values(payload).executeTakeFirst()
   }
 
   async findAll() {
     return db
-      .selectFrom("person")
+      .selectFrom("user")
       .select([
         "id",
         sql<string>`concat(first_name, ' ', last_name)`.as("full_name"),
@@ -23,13 +23,13 @@ export default class UsersController {
 
   async findOne(id: number) {
     return db
-      .selectFrom("person")
+      .selectFrom("user")
       .select([
         "id",
         sql<string>`concat(first_name, ' ', last_name)`.as("full_name"),
         "email",
       ])
-      .where("person.id", "=", id)
+      .where("user.id", "=", id)
       .executeTakeFirst()
   }
 
@@ -49,9 +49,6 @@ export default class UsersController {
   }
 
   async delete(id: number) {
-    return db
-      .deleteFrom("person")
-      .where("person.id", "=", id)
-      .executeTakeFirst()
+    return db.deleteFrom("user").where("user.id", "=", id).executeTakeFirst()
   }
 }

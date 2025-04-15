@@ -3,7 +3,7 @@ import { DB } from "../../src/db/db"
 
 export async function seed(db: Kysely<DB>): Promise<void> {
   await db
-    .insertInto("person")
+    .insertInto("user")
     .values([
       {
         first_name: "Ford",
