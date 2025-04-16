@@ -13,7 +13,7 @@
     "codegen": "kysely-codegen --out-file=./src/db/db.d.ts",
     "migrate": "docker compose up -d --wait db && kysely migrate:latest",
     "seed": "docker compose up -d --wait db && kysely seed:run",
-    "wipe": "docker compose down db && docker volume rm tutor-finder_db"
+    "wipe": "docker compose stop db && docker compose rm -f db && docker volume rm tutor-finder_db"
   },
   "dependencies": {
     "@types/cors": "^2.8.17",
